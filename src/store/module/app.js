@@ -8,7 +8,7 @@ export default {
     breadCrumbList:[], // 面包屑
     userInfo:{      // 用户信息
       avatorImgPath:minLogo,  // 头像
-      userName:"叶落山城",    // 姓名
+      userName:"thaoeu",    // 姓名
     },
     unreadCount:10, // 未读消息数
   },

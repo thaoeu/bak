@@ -6,6 +6,8 @@ const PostList = ()=>import('../views/post/list.vue');
 const PostCreate = ()=>import('../views/post/create.vue');
 const PostUpdate = ()=>import('../views/post/update.vue');
 const PostTrash = ()=>import('../views/post/trash.vue');
+const UserList = ()=>import('../views/users/detail.vue');
+const UserEdit = ()=>import('../views/users/edit.vue');
 const CateList = ()=>import('../views/cate/list.vue');
 const CateUpdate = ()=>import('../views/cate/update.vue');
 const CateCreate = ()=>import('../views/cate/create.vue');
@@ -175,6 +177,46 @@ export default [
       ]
   },
   {
+      path: '/backend/users',
+      name: 'users',
+      meta: {
+          icon: 'ios-man',
+          title: '用户管理'
+      },
+      component: User,
+    children: [
+        {
+            path: 'list',
+            name: 'tag_list',
+            meta: {
+                icon: 'ios-man',
+                title: '用户列表'
+            },
+            component: TagIndex
+        },
+        {
+            path: 'update',
+            name: 'tag_update',
+            meta: {
+                hideInMenu: true,
+                icon: 'ios-book',
+                title: '用户属性'
+            },
+            component: TagUpdate
+        },
+        {
+            path: 'create',
+            name: 'tag_create',
+            meta: {
+                icon: 'ios-add-circle',
+                title: '新建用户'
+            },
+            component: TagCreate
+        },
+    ]
+  },
+
+  {
     path: '/backend/tag',
     name: 'tag',
     meta: {
@@ -190,7 +232,7 @@ export default [
                 icon: 'md-share',
                 title: '标签列表'
             },
-            component: TagIndex
+            component: UserList
         },
         {
             path: 'update',
@@ -200,7 +242,7 @@ export default [
                 icon: 'ios-book',
                 title: '修改标签'
             },
-            component: TagUpdate
+            component: UserEdit
         },
         {
             path: 'create',
@@ -213,6 +255,46 @@ export default [
         },
     ]
 },
+    {
+        path: '/backend/link',
+        name: 'link',
+        meta: {
+            icon: 'ios-car',
+            title: '违章管理'
+        },
+        component: Main,
+        children: [
+            {
+                path: 'index',
+                name: 'link_index',
+                meta: {
+                    icon: 'ios-car',
+                    title: '违章查询'
+                },
+                component: LinkIndex
+            },
+            {
+                path: 'update',
+                name: 'link_update',
+                meta: {
+                    hideInMenu: true,
+                    icon: 'ios-book',
+                    title: '修改友链'
+                },
+                component: LinkUpdate
+            },
+            {
+                path: 'create',
+                name: 'link_create',
+                meta: {
+                    icon: 'ios-add-circle-outline',
+                    title: '新增违章'
+                },
+                component: LinkCreate
+            },
+        ]
+    },
+
   {
         path: '/backend/system',
         name: 'system',
@@ -233,45 +315,7 @@ export default [
             },
         ]
     },
-    {
-        path: '/backend/link',
-        name: 'link',
-        meta: {
-            icon: 'ios-car',
-            title: 'test'
-        },
-        component: Main,
-        children: [
-            {
-                path: 'index',
-                name: 'link_index',
-                meta: {
-                    icon: 'ios-link',
-                    title: 'aoeuaoeu'
-                },
-                component: LinkIndex
-            },
-            {
-                path: 'update',
-                name: 'link_update',
-                meta: {
-                    hideInMenu: true,
-                    icon: 'ios-book',
-                    title: '修改友链'
-                },
-                component: LinkUpdate
-            },
-            {
-                path: 'create',
-                name: 'link_create',
-                meta: {
-                    icon: 'ios-add-circle-outline',
-                    title: '新增友链'
-                },
-                component: LinkCreate
-            },
-        ]
-    },
+
   {
     path: '/backend/message',
     name: 'message',

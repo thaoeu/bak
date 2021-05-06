@@ -4,7 +4,7 @@
             <div >
                 <Form ref="formValidate" label-position="left" :model="formValidate" :rules="ruleValidate" :label-width="120">
                     <FormItem label="Title" prop="title" >
-                        <Input v-model="formValidate.title" placeholder="title"></Input>
+                        <Input v-model="formValidate.title" placeholder="道路"></Input>
                     </FormItem>
                     <FormItem label="Keywords" prop="keywords" >
                         <Input v-model="formValidate.keywords" placeholder="Keywords"></Input>
@@ -41,9 +41,7 @@
                     keywords: '',
                     description: '',
                     recordNumber: '',
-                    theme: '',
                 },
-                themes: {},
                 ruleValidate: {
                     title: [
                         { required: true, message: 'The title cannot be empty', trigger: 'blur' },
@@ -61,10 +59,6 @@
                         { required: true, message: 'The recordNumber can not be empty', trigger: 'blur' },
                         { max:50, message: 'The recordNumber length is too long', trigger: 'blur'}
                     ],
-                    theme: [
-                        // { required: true, message: 'The theme can not be empty', trigger: 'blur' },
-                        { type: 'integer', message: 'Please select the theme', trigger: 'change' },
-                    ],
                 },
                 systemId: 0,
             }
@@ -75,7 +69,6 @@
         methods: {
             defaultData () {
                 SystemIndex().then(res => {
-                    this.themes = res.data.data.themes;
                     this.systemId = res.data.data.system.Id;
                     this.formValidate.title = res.data.data.system.Title;
                     this.formValidate.keywords = res.data.data.system.Keywords;
