@@ -23,7 +23,7 @@ export default {
         axisPointer: {
           type: 'cross',
           label: {
-            backgroundColor: '#6a7985'
+            backgroundColor: '#000'
           }
         }
       },
@@ -52,7 +52,7 @@ export default {
           type: 'line',
           stack: '总量',
           areaStyle: {normal: {
-            color: '#2d8cf0'
+            color: '#000'
           }},
           data: [120, 132, 101, 134, 90, 230, 210]
         },
@@ -61,7 +61,7 @@ export default {
           type: 'line',
           stack: '总量',
           areaStyle: {normal: {
-            color: '#10A6FF'
+            color: '#000'
           }},
           data: [257, 358, 278, 234, 290, 330, 310]
         },
@@ -70,7 +70,7 @@ export default {
           type: 'line',
           stack: '总量',
           areaStyle: {normal: {
-            color: '#0C17A6'
+            color: '#000'
           }},
           data: [379, 268, 354, 269, 310, 478, 358]
         },
@@ -79,7 +79,7 @@ export default {
           type: 'line',
           stack: '总量',
           areaStyle: {normal: {
-            color: '#4608A6'
+            color: '#000'
           }},
           data: [320, 332, 301, 334, 390, 330, 320]
         },
@@ -94,7 +94,7 @@ export default {
             }
           },
           areaStyle: {normal: {
-            color: '#398DBF'
+            color: '#000'
           }},
           data: [820, 645, 546, 745, 872, 624, 258]
         }
